@@ -28,7 +28,7 @@ class AuthPage extends StatelessWidget {
           )),
           tileColor: Colors.blue,
           title: Text("Hello"),
-          subtitle: Text("andinawndaw"),
+          subtitle: Text("chel"),
         ),
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_project/auth_page.dart';
 
 void main() {
-  runApp(AppThemeMaterial());
+  runApp(const AppThemeMaterial());
 }
 
 class AppThemeMaterial extends StatelessWidget {
