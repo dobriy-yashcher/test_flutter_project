@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/components/authorization_input.dart';
+
+import '../components/margin.dart';
 
 String name = "Flutter";
 
@@ -25,7 +28,46 @@ class AuthPage extends StatelessWidget {
           const AuthorizationMargin(
             heightScale: 0.05,
           ),
-          Authorization
+          AuthorizationInput(
+              color: primaryColor,
+              icon: Icon(Icons.email, color: iconColor),
+              labelText: "Email"),
+          const AuthorizationMargin(),
+          AuthorizationInput(
+              color: primaryColor,
+              icon: Icon(Icons.email, color: iconColor),
+              labelText: "Password"),
+          const AuthorizationMargin(),
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.7,
+            height: MediaQuery.of(context).size.height * 0.06,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                shape: MaterialStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                backgroundColor: MaterialStatePropertyAll(primaryColor),
+              ),
+              onPressed: () {
+                Navigator.popAndPushNamed(context, '/home');
+                showDialog(
+                    context: context,
+                    builder: (context) {
+                      return const AlertDialog(
+                        content: Text('test'),
+                      );
+                    });
+              },
+              child: const Text('Sign in'),
+            ),
+          ),
+          const AuthorizationMargin(),
+          InkWell(
+            child: Text("Sign up?", style: TextStyle(color: primaryColor)),
+            onTap: () => {},
+          ),
         ]),
       )),
     );
