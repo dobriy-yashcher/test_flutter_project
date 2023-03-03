@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_project/auth_page.dart';
+import 'package:test_project/pages/auth_page.dart';
 
 void main() {
   runApp(const AppThemeMaterial());
