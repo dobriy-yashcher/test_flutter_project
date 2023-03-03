@@ -5,32 +5,29 @@ String name = "Flutter";
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
 
-  Widget auth(BuildContext context) {
-    return Container();
-  }
-
   @override
   Widget build(BuildContext context) {
+    var primaryColor = Theme.of(context).primaryColor;
+    var iconColor = Theme.of(context).hintColor;
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(name),
-        centerTitle: true,
-        actions: const [Icon(Icons.info)],
-      ),
-      drawer: const Drawer(),
-      body: auth(context),
-      bottomNavigationBar: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.5,
-        child: const ListTile(
-          shape: OutlineInputBorder(
-              borderRadius: BorderRadius.vertical(
-            top: Radius.circular(20),
-          )),
-          tileColor: Colors.blue,
-          title: Text("Hello"),
-          subtitle: Text("chel"),
-        ),
-      ),
+      body: Center(
+          child: SingleChildScrollView(
+        child: Column(children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("MonkeyApp",
+                  style: TextStyle(color: primaryColor, fontSize: 30)),
+              //Image.asset("images/monkey.png")
+            ],
+          ),
+          const AuthorizationMargin(
+            heightScale: 0.05,
+          ),
+          Authorization
+        ]),
+      )),
     );
   }
 }
