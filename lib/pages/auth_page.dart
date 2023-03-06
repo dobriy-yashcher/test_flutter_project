@@ -52,13 +52,13 @@ class AuthPage extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.popAndPushNamed(context, '/home');
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      return const AlertDialog(
-                        content: Text('test'),
-                      );
-                    });
+                // showDialog(
+                //     context: context,
+                //     builder: (context) {
+                //       return const AlertDialog(
+                //         content: Text('test'),
+                //       );
+                //     });
               },
               child: const Text('Sign in'),
             ),
@@ -67,6 +67,15 @@ class AuthPage extends StatelessWidget {
           InkWell(
             child: Text("Sign up?", style: TextStyle(color: primaryColor)),
             onTap: () => {},
+          ),
+          const AuthorizationMargin(),
+          SizedBox(
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.popAndPushNamed(context, '/apps');
+              },
+              child: const Text('Apps'),
+            ),
           ),
         ]),
       )),

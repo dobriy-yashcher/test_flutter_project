@@ -19,7 +19,6 @@ class CardsPage extends StatelessWidget {
                     children: [Text("Карточки вертикальные")])
               ]),
             );
-            //return const Text('Карточки вертикальные', style: TextStyle(lo: ));
           }
           return generateListTile(context, index);
         }

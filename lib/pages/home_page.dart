@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_project/pages/apps_page.dart';
 import 'package:test_project/pages/calendar_page.dart';
 import 'package:test_project/pages/cards_page.dart';
 import 'package:test_project/pages/deals_page.dart';
@@ -28,6 +28,7 @@ class _HomePageState extends State<HomePage> {
       DealsPage(searchText),
       const CalendarPage(),
       const CardsPage(),
+      const AppsPage(),
     ];
 
     return listPages[index];
@@ -108,7 +109,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.view_carousel_outlined),
             label: 'Карточки',
-          )
+          ),
         ],
         onTap: ((value) {
           setState(() {
