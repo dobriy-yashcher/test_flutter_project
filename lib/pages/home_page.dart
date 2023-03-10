@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/components/drawer.dart';
 import 'package:test_project/pages/apps_page.dart';
 import 'package:test_project/pages/calendar_page.dart';
 import 'package:test_project/pages/cards_page.dart';
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> {
           child: FloatingActionButton(
               onPressed: () {}, child: const Icon(Icons.add))),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      drawer: const Drawer(),
+      drawer: const MenuDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index,
         backgroundColor: primaryColor,

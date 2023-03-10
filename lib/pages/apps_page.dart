@@ -5,37 +5,47 @@ class AppsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text("Приложения"),
-          centerTitle: true,
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.popAndPushNamed(context, '/');
-                },
-                icon: const Icon(Icons.exit_to_app))
-          ],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-          child: Center(
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.95,
-              height: MediaQuery.of(context).size.height * 0.8,
-              child: const ListMaker(numberOfItems: 24),
+    return Container(
+      child: Scaffold(
+          appBar: AppBar(
+            title: const Text("Приложения"),
+            centerTitle: true,
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.popAndPushNamed(context, '/');
+                  },
+                  icon: const Icon(Icons.exit_to_app))
+            ],
+          ),
+          body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/blub.jpg"),
+                fit: BoxFit.cover
+              )
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: Center(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.95,
+                  height: MediaQuery.of(context).size.height * 0.8,
+                  child: const ListMaker(numberOfItems: 24),
+                ),
+              ),
             ),
           ),
-        ),
-        bottomNavigationBar: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.124,
-            child: Card(
-              color: const Color.fromARGB(100, 158, 158, 158),
-              elevation: 0.0,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: const ListMaker(numberOfItems: 4),
-            )));
+          bottomNavigationBar: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.124,
+              child: Card(
+                color: const Color.fromARGB(100, 158, 158, 158),
+                elevation: 0.0,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                child: const ListMaker(numberOfItems: 4),
+              ))),
+    );
   }
 }
 
@@ -55,7 +65,7 @@ class ListMaker extends StatelessWidget {
         return Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            color: const Color.fromARGB(0, 255, 193, 7),
+            color: Color.fromARGB(0, 255, 193, 7),
             elevation: 0,
             child: IconButton(
               iconSize: 80,
